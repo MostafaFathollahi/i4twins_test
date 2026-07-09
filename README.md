@@ -37,10 +37,16 @@ python eval.py --system improved                       # improved, MiniLM (basel
 python eval.py --system improved --model e5-small-v2   # improved, alternative embedder
 ```
 
-**Models** (all local): `all-MiniLM-L6-v2` (baseline embedder) and, for the
-embedder comparison, `intfloat/e5-small-v2` / `thenlper/gte-small`. Lexical
-retrieval uses `rank_bm25` (pure Python). All run on CPU; the only network need
-is a **one-time model download** at setup — retrieval itself is fully offline.
+**Models** (all local, CPU): `all-MiniLM-L6-v2` (baseline embedder) and, for the
+§8 embedder comparison, `intfloat/e5-small-v2` / `thenlper/gte-small`. Lexical
+retrieval uses `rank_bm25` (pure Python). The **first** `run_eval.sh` downloads
+these models once (~300 MB total); every run afterwards is offline. The offline
+constraint is about *runtime* — no cloud API is ever called. To prove a fully
+air-gapped run after prefetching, force offline mode:
+
+```bash
+HF_HUB_OFFLINE=1 ./run_eval.sh
+```
 
 ---
 

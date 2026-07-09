@@ -4,9 +4,11 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-# Prefer the local venv if present; models are cached, so run offline.
+# Prefer the local venv if present.
 if [ -x ".venv/bin/python" ]; then PY=".venv/bin/python"; else PY="${PYTHON:-python}"; fi
-export HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false
+# Models download once on first run, then run offline. To force a fully offline
+# run after prefetching, invoke with HF_HUB_OFFLINE=1 ./run_eval.sh
+export TOKENIZERS_PARALLELISM=false
 
 echo "########## Corpus analysis (chunking decision) ##########"
 $PY analyze_corpus.py
