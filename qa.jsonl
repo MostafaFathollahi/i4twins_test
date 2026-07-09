@@ -1,0 +1,19 @@
+{"id": "Q01", "question": "What is the rated output of the C-100 compressor?", "gold_doc_ids": ["DOC-03"], "answerable": true, "note": "6 m3/min at 8 bar (DOC-03)."}
+{"id": "Q02", "question": "How often should temperature sensors be calibrated?", "gold_doc_ids": ["DOC-10"], "answerable": true, "note": "Every 12 months (DOC-10)."}
+{"id": "Q03", "question": "What should be checked before starting the M-50 motor?", "gold_doc_ids": ["DOC-04"], "answerable": true, "note": "Isolation switch, insulation resistance, coupling guard (DOC-04)."}
+{"id": "Q04", "question": "What is the acceptable vibration limit for F-30 fans?", "gold_doc_ids": ["DOC-05", "DOC-06"], "answerable": true, "note": "4.5 mm/s RMS; stated as paraphrases in DOC-05 and DOC-06 (near-duplicate; either is correct)."}
+{"id": "Q05", "question": "What does error code E-207 indicate and what should be done?", "gold_doc_ids": ["DOC-07"], "answerable": true, "note": "Overpressure trip on pumps (DOC-07). Exact-code query, tests lexical channel."}
+{"id": "Q06", "question": "What does error code E-115 mean?", "gold_doc_ids": ["DOC-08"], "answerable": true, "note": "Sensor fault / open circuit on temperature probe (DOC-08)."}
+{"id": "Q07", "question": "When should the BRG-4410 bearing be replaced?", "gold_doc_ids": ["DOC-09"], "answerable": true, "note": "Every 12000 hours or when vibration exceeds the limit (DOC-09)."}
+{"id": "Q08", "question": "How often is preventive maintenance due for the P-200 pump?", "gold_doc_ids": ["DOC-02", "DOC-12"], "answerable": true, "note": "Every 2000 operating hours; stated consistently in DOC-02 and DOC-12 (redundant, multi-gold)."}
+{"id": "Q09", "question": "What is the maximum operating pressure of the P-200 pump?", "gold_doc_ids": ["DOC-01", "DOC-02"], "answerable": true, "note": "CONFLICT: 16 bar (DOC-01) vs 12 bar (DOC-02). System should surface both and flag the conflict."}
+{"id": "Q10", "question": "What is the nominal flow rate of the P-200 pump?", "gold_doc_ids": ["DOC-01"], "answerable": true, "note": "40 m3/h (DOC-01)."}
+{"id": "Q11", "question": "What are the steps for lockout/tagout before maintenance?", "gold_doc_ids": ["DOC-11"], "answerable": true, "note": "Isolate energy, apply personal lock/tag, verify zero energy (DOC-11)."}
+{"id": "Q12", "question": "What is the motor power of the C-100 compressor?", "gold_doc_ids": ["DOC-03"], "answerable": true, "note": "37 kW (DOC-03)."}
+{"id": "Q13", "question": "What is the rated output of the C-200 compressor?", "gold_doc_ids": [], "answerable": false, "note": "No C-200 in corpus (only C-100). Near-miss; must abstain, not return DOC-03."}
+{"id": "Q14", "question": "What is the warranty period of the M-50 motor?", "gold_doc_ids": [], "answerable": false, "note": "No warranty information anywhere in the corpus."}
+{"id": "Q15", "question": "What is the weight of the P-200 pump?", "gold_doc_ids": [], "answerable": false, "note": "No weight/mass data for P-200; DOC-01/DOC-02 are semantically close, so abstention is non-trivial."}
+{"id": "Q16", "question": "What lubricant grade is recommended for the BRG-4410 bearing?", "gold_doc_ids": [], "answerable": false, "note": "DOC-09 covers replacement, not lubricant grade. Must abstain."}
+{"id": "Q17", "question": "What is the maximum flow rate of the F-30 fan?", "gold_doc_ids": [], "answerable": false, "note": "F-30 docs (DOC-05/06) cover vibration only, no flow rate. Must abstain."}
+{"id": "Q18", "question": "coupling guard fitted no-load start", "gold_doc_ids": ["DOC-04"], "answerable": true, "style": "keyword", "note": "Terse technician-style query. Dense-only baseline mis-ranks DOC-11 (lockout, shares 'guard'); hybrid+title recovers DOC-04."}
+{"id": "Q19", "question": "after a network interruption review log for gaps", "gold_doc_ids": ["DOC-16"], "answerable": true, "style": "keyword", "note": "Terse query. Dense-only baseline mis-ranks DOC-14 (emergency/shutdown); hybrid recovers DOC-16."}
